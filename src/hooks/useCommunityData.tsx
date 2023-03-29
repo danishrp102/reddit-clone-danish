@@ -29,7 +29,7 @@ const useCommunityData = () => {
 
   const onJoinOrLeaveCommunity = (
     communityData: Community,
-    isJoined: boolean
+    isJoined?: boolean
   ) => {
     // is the user signed in?
     // if not => open auth modal

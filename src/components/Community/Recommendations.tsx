@@ -34,12 +34,11 @@ const Recommendations: React.FC = () => {
       const communities = communityDocs.docs.map((doc) => ({
         id: doc.id,
         ...doc.data(),
-      }));
-      setCommunities(communities as Community[]);
+      })) as Community[];
+      setCommunities(communities);
     } catch (error) {
       console.log("getCommunityRecommendations error", error);
     }
-
     setLoading(false);
   };
 
@@ -59,13 +58,14 @@ const Recommendations: React.FC = () => {
         align="flex-end"
         color="white"
         p="6px 10px"
+        // cursor="pointer"
         height="70px"
         borderRadius="4px 4px 0px 0px"
         fontWeight={700}
         bgImage="url(/images/recCommsArt.png)"
         backgroundSize="cover"
         bgGradient="linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75)),
-        url('images/recCommsArt.png')"
+      url('images/recCommsArt.png')"
       >
         Top Communities
       </Flex>
@@ -92,7 +92,8 @@ const Recommendations: React.FC = () => {
                 (snippet) => snippet.communityId === item.id
               );
               return (
-                <Link key={item.id} href={`/r/${item.id}`}>
+                // <Link key={item.id} href={`/r/${item.id}`}>
+                <Link key={item.id} href={`/`}>
                   <Flex
                     position="relative"
                     align="center"
