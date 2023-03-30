@@ -26,6 +26,9 @@ import { useSetRecoilState } from "recoil";
 
 type AboutProps = {
   communityData: Community;
+  pt?: number;
+  onCreatePage?: boolean;
+  loading?: boolean;
 };
 
 const About: React.FC<AboutProps> = ({ communityData }) => {
