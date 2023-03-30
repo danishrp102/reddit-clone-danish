@@ -92,8 +92,8 @@ const Recommendations: React.FC = () => {
                 (snippet) => snippet.communityId === item.id
               );
               return (
-                // <Link key={item.id} href={`/r/${item.id}`}>
-                <Link key={item.id} href={`/`}>
+                <Link key={item.id} href={`/r/${item.id}`}>
+                  {/* <Link key={item.id} href={`/`}> */}
                   <Flex
                     position="relative"
                     align="center"
@@ -139,7 +139,8 @@ const Recommendations: React.FC = () => {
                         fontSize="8pt"
                         variant={isJoined ? "outline" : "solid"}
                         onClick={(event) => {
-                          event.stopPropagation();
+                          //   event.stopPropagation();
+                          event.preventDefault();
                           onJoinOrLeaveCommunity(item, isJoined);
                         }}
                       >
